@@ -5,12 +5,14 @@ for (let i = 0; i < numberOfDrumButtons; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function () {
     let buttonInnerHtml = this.innerHTML;
     makeSound(buttonInnerHtml);
+    buttonAnimation(buttonInnerHtml);
   });
 }
 
 // Here sounds play when key is pressed.
 document.addEventListener("keydown", function (event) {
   makeSound(event.key);
+  buttonAnimation(event.key);
 });
 
 function makeSound(key) {
@@ -47,4 +49,8 @@ function makeSound(key) {
     default:
       console.log(buttonInnerHtml);
   }
+}
+function buttonAnimation(currentKey) {
+  let activeBtn = document.querySelector("." + currentKey);
+  activeBtn.classList.add("pressed");
 }

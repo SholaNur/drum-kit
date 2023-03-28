@@ -4,6 +4,7 @@ let numberOfDrumButtons = document.querySelectorAll(".drum").length;
 for (let i = 0; i < numberOfDrumButtons; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function () {
     let buttonInnerHtml = this.innerHTML;
+
     makeSound(buttonInnerHtml);
     buttonAnimation(buttonInnerHtml);
   });
@@ -53,4 +54,7 @@ function makeSound(key) {
 function buttonAnimation(currentKey) {
   let activeBtn = document.querySelector("." + currentKey);
   activeBtn.classList.add("pressed");
+  setTimeout(function () {
+    activeBtn.classList.remove("pressed");
+  }, 1000);
 }

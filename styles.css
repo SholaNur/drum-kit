@@ -9,7 +9,12 @@ h1 {
   font-family: "Arvo", cursive;
   text-shadow: 3px 0 #da0463;
 }
-
+h5 {
+  font-size: 1rem;
+  color: #dbedf3;
+  font-family: "Arvo", cursive;
+  text-shadow: 3px 0 #da0463;
+}
 .w {
   background-image: url(images/crash.png);
 }
